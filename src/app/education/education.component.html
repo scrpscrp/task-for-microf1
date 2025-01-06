@@ -1,0 +1,89 @@
+<form [formGroup]="educationForm" (ngSubmit)="submit()">
+  <div class="mt-4" formArrayName="educationBlocks">
+    <div
+      *ngFor="let education of educationBlocks.controls; let i = index"
+      [formGroupName]="i"
+      class="col-md-6 mb-3"
+    >
+      <div class="form-floating mb-3">
+        <input
+          formControlName="schoolName"
+          type="text"
+          class="form-control"
+          id="schoolName"
+          placeholder="Enter School Name"
+        />
+        <label for="schoolName">School Name</label>
+      </div>
+
+      <div class="form-group form-floating mb-3">
+        <input
+          formControlName="degree"
+          type="text"
+          class="form-control"
+          id="degree"
+          placeholder="Enter Degree"
+        />
+        <label for="degree">Degree</label>
+      </div>
+
+      <div class="form-group form-floating mb-3">
+        <input
+          formControlName="startDate"
+          type="date"
+          class="form-control"
+          id="startDate"
+        />
+        <label for="startDate">Start Date</label>
+      </div>
+
+      <div class="form-group form-floating mb-3">
+        <input
+          formControlName="endDate"
+          type="date"
+          class="form-control"
+          id="endDate"
+        />
+        <label for="endDate">End Date</label>
+      </div>
+
+      <button
+        *ngIf="educationBlocks.length > 1"
+        type="button"
+        class="btn btn-danger"
+        (click)="removeEducationBlock(i)"
+      >
+        X
+      </button>
+    </div>
+  </div>
+
+  <div class="d-flex justify-content-end">
+    <input
+      class="form-check-input"
+      type="checkbox"
+      id="agreeTerms"
+      [formControl]="isChecked"
+    />
+    <label class="form-check-label" for="agreeTerms">
+      I agree to the terms and conditions
+    </label>
+  </div>
+
+  <div class="d-flex justify-content-end mt-4">
+    <button
+      type="button"
+      class="btn btn-primary m-3"
+      (click)="addEducationBlock()"
+    >
+      +
+    </button>
+    <button
+      type="submit"
+      class="btn btn-success m-3"
+      [disabled]="educationForm.invalid"
+    >
+      Submit
+    </button>
+  </div>
+</form>

@@ -1,0 +1,24 @@
+<div class="container">
+  <div class="row">
+    <h2 class="text-center mt-4">{{ labels.title }}</h2>
+    <div class="col-md-9 mx-auto">
+      <app-stepper [linearModeSelected]="false" #appStepper>
+        <cdk-step [label]="labels.aboutMe">
+          <app-about-me></app-about-me>
+        </cdk-step>
+        <cdk-step [label]="labels.education">
+          <app-education></app-education>
+        </cdk-step>
+        <cdk-step [label]="labels.higherEducation">
+          <app-higher-education></app-higher-education>
+        </cdk-step>
+        <cdk-step [label]="labels.expirience">
+          <app-expirience></app-expirience>
+        </cdk-step>
+        <cdk-step [label]="labels.result">
+          <app-result></app-result>
+        </cdk-step>
+      </app-stepper>
+    </div>
+  </div>
+</div>
