@@ -60,27 +60,25 @@
 
   <div class="d-flex justify-content-end">
     <input
-      class="form-check-input"
+      class="form-check-input m-1"
       type="checkbox"
       id="agreeTerms"
       [formControl]="isChecked"
     />
-    <label class="form-check-label" for="agreeTerms">
-      I agree to the terms and conditions
-    </label>
+    <label class="form-check-label" for="education"> education </label>
   </div>
 
   <div class="d-flex justify-content-end mt-4">
     <button
       type="button"
-      class="btn btn-primary m-3"
+      class="btn btn-primary m-1"
       (click)="addEducationBlock()"
     >
       +
     </button>
     <button
       type="submit"
-      class="btn btn-success m-3"
+      class="btn btn-success m-1"
       [disabled]="educationForm.invalid"
     >
       Submit

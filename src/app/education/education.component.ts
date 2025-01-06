@@ -21,7 +21,7 @@ export class EducationComponent {
 
   public educationForm = this.fb.group({
     educationBlocks: this.fb.array([this.createEducationBlock()]),
-    agreeTerms: this.isChecked,
+    education: this.isChecked,
   });
 
   constructor(private fb: FormBuilder) {}
